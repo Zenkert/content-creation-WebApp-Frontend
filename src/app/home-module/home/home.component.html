@@ -1,0 +1,57 @@
+<div class="main darkMode">
+    <div class="container-fluid">
+        <div class="home">
+            <h1 style="color: white;">{{'Home_page.welcome' | translate }}!</h1>
+            <hr>
+            <!-- <p> The corona pandemic has uncovered a number of systemic inequalities with regard to
+                education and access to learning opportunities. Across countries and settings in the EU, the necessity
+                to resort to the digital sphere with learning has shown that it is not equally possible for all members
+                of a society to follow suit. Particularly vulnerable groups, including people with a migration
+                background, people with a refugee background, or non-native speakers, who were already having a
+                difficult experience before. These groups have now been even more strongly left behind in terms of
+                education.</p> -->
+            <p>{{'Home_page.Home Text' | translate }}</p>
+        </div>
+        <br>
+        <br>
+    </div>
+    <br> <br>
+    <div class="image">
+        <div>
+            <h1>{{'Home_page.teach' | translate}}</h1>
+            <!-- <p>Working with social workers as well as the newly emerged profession of cultural mediators who is acting
+                as a bridge towards municipalities and local educational institutions, such as schools, and extending
+                their personal reach-out towards the digital sphere by means of chatbots, the SEEDS project proposes a
+                combination of social and digital outreach to mitigate this effect. Needed learning contents will be
+                communicated in a new way by means of chatbots, where municipalities and educational institutions can
+                create learning materials in a pre-defined processes, and cultural mediators, social workers, or
+                individual learners themselves can access the learning material that teachers created, to enhance the
+                learners’ educational experience.</p> -->
+            <p>{{'Home_page.paragraph' | translate}}</p>
+        </div>
+
+        <!-- <img src="assets/teach1.jpg"> -->
+
+    </div>
+    <div>
+        <h1>{{'Home_page.projectpartners' | translate}}</h1>
+        <div class="content">
+            <div class="example-card" *ngFor="let card of cards">
+                <mat-card class="mat-elevation-z4">
+                    <mat-card-header>
+                        <mat-card-title>{{card.title}}</mat-card-title>
+                    </mat-card-header>
+                    <img class="card-image" mat-card-image [src]="card.img">
+                    <mat-card-content>
+                        <p>
+                            <img [src]="card.description" /> {{card.countryName}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button class="button"><a href="{{card.link}}" target="_blank">VIEW</a></button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

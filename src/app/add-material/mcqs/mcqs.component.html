@@ -1,0 +1,134 @@
+<div class="spinnerDiv" *ngIf="loading">
+    <mat-spinner aria-label="Please wait" [diameter]="100" strokeWidth="2"></mat-spinner>
+    <div style="position:relative; top: -60px; left: 30px;">Please wait.</div>
+</div>
+<div class="main-content" *ngIf="!loading">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title" *ngIf="isAddMode">Create MCQs</h4>
+                        <h4 class="card-title" *ngIf="!isAddMode">Edit MCQs</h4>
+                    </div>
+                    <br>
+                    <div class="card-body">
+                        <form [formGroup]="mcqsForm">
+                            <mat-form-field class="input_text">
+                                <mat-label>Activity Sequence Number</mat-label>
+                                <input class="input_form" matInput type="number" name="sequence" id="sequence"
+                                    formControlName="sequence" required>
+                            </mat-form-field>
+                            <div *ngIf="sequence.touched && sequence.invalid">
+                                <mat-error *ngIf="sequence.errors?.['required']">
+                                    <div>
+                                        Please enter a Sequence of Number.
+                                    </div>
+                                </mat-error>
+                                <mat-error *ngIf="sequence.errors?.['min']">
+                                    Please enter greater than or equal to 1 Sequence Number.</mat-error>
+                            </div>
+                            
+                            <br>
+
+                            <div class="textarea">
+                                <mat-label>Please enter the Question Statement *</mat-label>
+                                <ul>
+                                    <textarea type="text" name="mcqs" id="mcqs" formControlName="mcqs" required rows="4"
+                                        cols="40"> </textarea>
+                                </ul>
+                                <div *ngIf="isAddMode">
+                                    <input type="file" (change)="PickedImage($event)">
+                                    <span>*Only png, jpeg, jpg</span>
+                                    <div class="image-preview" *ngIf="Pickedimage">
+                                        <img [src]="Pickedimage" alt="No Profile picture">
+                                        <button mat-stroked-button class="button" class="pointer"
+                                            (click)="DeleteImage()">Delete <mat-icon style="color: rgb(199, 24, 24)">
+                                                delete</mat-icon></button>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div *ngIf="!isAddMode">
+                                    <div *ngIf="imageUrl === ''">
+                                        <input type="file" (change)="PickedImage($event)">
+                                        <span>* Only png, jpeg, jpg</span>
+                                        <div class="image-preview" *ngIf="Pickedimage">
+                                            <img [src]="Pickedimage" alt="No Profile picture">
+                                            <button mat-stroked-button class="button" class="pointer"
+                                                (click)="DeleteImage()">Delete <mat-icon
+                                                    style="color: rgb(199, 24, 24)">
+                                                    delete</mat-icon></button>
+                                            <br>
+                                        </div>
+                                    </div>
+                                    <div class="image-preview" *ngIf="imageUrl !== ''">
+                                        <img [src]="imageUrl" alt="No Profile picture">
+                                        <button mat-stroked-button class="button" class="pointer"
+                                            (click)="DeleteImageBackend()">Delete <mat-icon
+                                                style="color: rgb(199, 24, 24)">
+                                                delete</mat-icon></button>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="options">
+                                <mat-label>
+                                    Please enter the options.
+                                </mat-label>
+                                <ul>
+                                    <span>Option A:</span><input type="text" name="option1" id="option1"
+                                        formControlName="option1" required>
+                                    <span>Option B:</span><input type="text" name="option2" id="option2"
+                                        formControlName="option2" required>
+                                    <span>Option C:</span><input type="text" name="option3" id="option3"
+                                        formControlName="option3" required>
+                                    <span>Option D:</span><input type="text" name="option4" id="option4"
+                                        formControlName="option4" required>
+                                </ul>
+                            </div>
+                            <div>
+                                <mat-label for="answer"><b>Please select correct Answer *</b></mat-label>
+                                <mat-form-field appearance="fill">
+                                    <mat-label> Choose answer</mat-label>
+                                    <mat-select formControlName="answer">
+                                        <mat-option value="option1">Option A</mat-option>
+                                        <mat-option value="option2">Option B</mat-option>
+                                        <mat-option value="option3">Option C</mat-option>
+                                        <mat-option value="option4">Option D</mat-option>
+
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-error *ngIf="(!mcqsForm.valid && mcqsForm.get('answer')?.errors) && 
+                                (mcqsForm.get('answer')?.dirty || mcqsForm.get('answer')?.touched)">
+                                    <div>
+                                        Please select Answer.
+                                    </div>
+                                </mat-error>
+                                <br>
+
+                                <div class="feedback">
+                                    <div class="feedback__step">
+                                        <mat-label>Feedback, if the answer is correct *</mat-label>
+                                        <textarea type="text" name="posFeedback" id="posFeedback"
+                                            formControlName="posFeedback" required> </textarea>
+                                    </div>
+                                    <div class="feedback__step">
+                                        <mat-label>Feedback, if the answer is incorrect *</mat-label>
+                                        <textarea type="text" name="negFeedback" id="negFeedback"
+                                            formControlName="negFeedback" required> </textarea>
+                                    </div>
+                                </div>
+                                <button mat-stroked-button [disabled]="mcqsForm.invalid" type="submit"
+                                    (click)="onSubmit()"
+                                    style="width: 40%; text-align: center; font-size: px;">Submit</button>
+                            </div>
+                        </form>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>

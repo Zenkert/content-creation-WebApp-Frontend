@@ -1,0 +1,261 @@
+<div class="neutrality" >
+    <div class="edit-profile__avatar faq-title">
+        <img src="assets/faq.png" alt="avatar">
+        <h1>FAQ</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="edit-profile faq">
+        <div class="edit-profile__settings edit-profile__settings--faq">
+            <div>
+
+                <!-- <div class="settings-tabs">
+                    <nav mat-tab-nav-bar>
+                        <a mat-tab-link *ngFor="let link of links" (click)="activeLink = link"
+                            [active]="activeLink == link"> {{link}} </a>
+                    </nav>
+                </div> -->
+
+                <div class="setting-content" >
+                    <mat-accordion>
+                        <mat-expansion-panel (opened)="isExpanded = true" (closed)="isExpanded = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title >
+                                    {{'faq.q_what_is_seeds' | translate}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>{{'faq.a_what_is_seeds' | translate}}</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="isExpanded = true" (closed)="isExpanded = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{'faq.q_who_is_funding_seeds' | translate}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>{{'faq.a_who_is_funding_seeds' | translate}}</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="isExpanded = true" (closed)="isExpanded = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{'faq.q_what_is_project_website' | translate}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>{{'faq.a_what_is_project_website' | translate}}</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="isExpanded = true" (closed)="isExpanded = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{'faq.q_how_to_contact' | translate}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>{{'faq.a_how_to_contact' | translate}}</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="isExpanded = true" (closed)="isExpanded = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{'faq.q_who_are_project_partners' | translate}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>{{'faq.a_who_are_project_partners' | translate}}</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="isExpanded = true" (closed)="isExpanded = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{'faq.q_is_project_running' | translate}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>{{'faq.a_is_project_running' | translate}}</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="isExpanded = true" (closed)="isExpanded = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{'faq.q_are_project_results_open' | translate}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>{{'faq.a_are_project_results_open' | translate}}</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="isExpanded = true" (closed)="isExpanded = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{'faq.q_where_are_project_results' | translate}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>{{'faq.a_where_are_project_results' | translate}}</p>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                    <!-- <mat-accordion *ngIf="activeLink == links[1]">
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                    <mat-accordion *ngIf="activeLink == links[2]">
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                    <mat-accordion *ngIf="activeLink == links[3]">
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    This is a question?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>This is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer This is the answer This is the answer This
+                                is the answer This is the answer This is the answer This is the answer This is the
+                                answer This is the answer This is the answer .</p>
+                        </mat-expansion-panel>
+                    </mat-accordion> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

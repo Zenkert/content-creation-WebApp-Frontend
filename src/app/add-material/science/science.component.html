@@ -1,0 +1,47 @@
+<div class="main-content">
+
+    <button mat-stroked-button [routerLink]="['/material/edit-topic', topicGetById._id]" class="button">Back</button>
+    <h2>Please submit all the Questions one by one on this page.</h2>
+    <p>Remaining Questions to be Submitted: {{remainingQuestions}}</p>
+    <div class="container" *ngFor="let items of this.arr; let i=index">
+        
+        <div *ngIf="ifSubmitted[i]"> Question has been Submitted
+            <meta http-equiv="refresh" content="0.01">
+        </div>
+
+        <div *ngIf="!ifSubmitted[i]">
+            <mat-label><b>Please select type of activity.</b></mat-label>
+            <br>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label> Choose type</mat-label>
+                <mat-select [(ngModel)]="selectedValue[i]">
+                    <mat-option [value]="item.questionType" *ngFor="let item of type">
+                        {{item.questionType}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div *ngIf="selectedValue[i] === 'MCQS'">
+                <app-mcqs (submitEvent)="setSubmit($event, i)"></app-mcqs>
+            </div>
+
+            <div *ngIf="selectedValue[i] === 'True False'">
+                <app-true-false (submitEvent)="setSubmit($event, i)"></app-true-false>
+            </div>
+
+            <div *ngIf="selectedValue[i] === 'Open Ended Question'">
+                <app-open-ended (submitEvent)="setSubmit($event, i)"></app-open-ended>
+            </div>
+
+            <div *ngIf="selectedValue[i] === 'Introduction'">
+                <app-introduction (submitEvent)="setSubmit($event, i)"></app-introduction>
+            </div>
+
+            <div *ngIf="selectedValue[i] === 'Match pairs'">
+                <app-match-pairs (submitEvent)="setSubmit($event, i)"></app-match-pairs>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>

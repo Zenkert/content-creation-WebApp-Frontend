@@ -1,0 +1,129 @@
+<div class="spinnerDiv" *ngIf="loading">
+    <mat-spinner aria-label="Please wait" [diameter]="100" strokeWidth="2"></mat-spinner>
+    <div style="position:relative; top: -60px; left: 30px;">Please wait.</div>
+</div>
+<div class="main-content" *ngIf="!loading">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title" *ngIf="isAddMode">Create Matching Pairs</h4>
+                        <h4 class="card-title" *ngIf="!isAddMode">Edit Matching Pairs</h4>
+                    </div>
+                    <br>
+                    <div class="card-body">
+                        <form [formGroup]="match_pairsForm">
+                            <mat-form-field class="input_text">
+                                <mat-label>Activity Sequence Number</mat-label>
+                                <input class="input_form" matInput type="number" name="sequence" id="sequence"
+                                    formControlName="sequence" required>
+                            </mat-form-field>
+                            <div *ngIf="sequence.touched && sequence.invalid">
+                                <mat-error *ngIf="sequence.errors?.['required']">
+                                    <div>
+                                        Please enter a Sequence of Number.
+                                    </div>
+                                </mat-error>
+                                <mat-error *ngIf="sequence.errors?.['min']">
+                                    Please enter greater than or equal to 1 Sequence Number.</mat-error>
+                            </div>
+                            <br>
+
+                            <div class="textarea">
+                                <mat-label>Please enter the Question Statement *</mat-label>
+                                <ul>
+                                    <textarea type="text" name="question" id="question" formControlName="question"
+                                        required rows="4" cols="40"> </textarea>
+                                </ul>
+                            </div>
+                            <div *ngIf="isAddMode">
+                                <input type="file" (change)="PickedImage($event)">
+                                <span>* Only png, jpeg, jpg</span>
+                                <div class="image-preview" *ngIf="Pickedimage">
+                                    <img [src]="Pickedimage" alt="No Profile picture">
+                                    <button mat-stroked-button class="button" class="pointer"
+                                        (click)="DeleteImage()">Delete <mat-icon style="color: rgb(199, 24, 24)">
+                                            delete</mat-icon></button>
+                                    <br>
+                                </div>
+                            </div>
+
+                            <div *ngIf="!isAddMode">
+                                <div *ngIf="imageUrl === ''">
+                                    <input type="file" (change)="PickedImage($event)">
+                                    <span>* Only png, jpeg, jpg</span>
+                                    <div class="image-preview" *ngIf="Pickedimage">
+                                        <img [src]="Pickedimage" alt="No Profile picture">
+                                        <button mat-stroked-button class="button" class="pointer"
+                                            (click)="DeleteImage()">Delete <mat-icon style="color: rgb(199, 24, 24)">
+                                                delete</mat-icon></button>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="image-preview" *ngIf="imageUrl !== ''">
+                                    <img [src]="imageUrl" alt="No Profile picture">
+                                    <button mat-stroked-button class="button" class="pointer"
+                                        (click)="DeleteImageBackend()">Delete <mat-icon style="color: rgb(199, 24, 24)">
+                                            delete</mat-icon></button>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="options">
+                                <mat-label>
+                                    Please enter the options and their correct answers.
+                                </mat-label>
+                                <ul>
+                                    <span>Statement 1:</span><input type="text" name="statement1" id="statement1"
+                                        formControlName="statement1">
+                                    <span>Answer 1:</span><input type="text" name="answer1" id="answer1"
+                                        formControlName="answer1">
+                                    <span>Statement 2:</span><input type="text" name="statement2" id="statement2"
+                                        formControlName="statement2">
+                                    <span>Answer 2:</span><input type="text" name="answer2" id="answer2"
+                                        formControlName="answer2">
+                                    <span>Statement 3:</span><input type="text" name="statement3" id="statement3"
+                                        formControlName="statement3">
+                                    <span>Answer 3:</span><input type="text" name="answer3" id="answer3"
+                                        formControlName="answer3">
+                                    <span>Statement 4:</span><input type="text" name="statement4" id="statement4"
+                                        formControlName="statement4">
+                                    <span>Answer 4:</span><input type="text" name="answer4" id="answer4"
+                                        formControlName="answer4">
+                                    <span>Statement 5:</span><input type="text" name="statement5" id="statement5"
+                                        formControlName="statement5">
+                                    <span>Answer 5:</span><input type="text" name="answer5" id="answer5"
+                                        formControlName="answer5">
+                                    <span>Statement 6:</span><input type="text" name="statement6" id="statement6"
+                                        formControlName="statement6">
+                                    <span>Answer 6:</span><input type="text" name="answer6" id="answer6"
+                                        formControlName="answer6">
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="feedback">
+                                    <div class="feedback__step">
+                                        <mat-label>Feedback, if the answer is correct *</mat-label>
+                                        <textarea type="text" name="posFeedback" id="posFeedback"
+                                            formControlName="posFeedback" required> </textarea>
+                                    </div>
+                                    <div class="feedback__step">
+                                        <mat-label>Feedback, if the answer is incorrect *</mat-label>
+                                        <textarea type="text" name="negFeedback" id="negFeedback"
+                                            formControlName="negFeedback" required> </textarea>
+                                    </div>
+                                </div>
+                                <button mat-stroked-button [disabled]="match_pairsForm.invalid" type="submit"
+                                    (click)="onSubmit()"
+                                    style="width: 40%; text-align: center; font-size: px;">Submit</button>
+                            </div>
+                        </form>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>

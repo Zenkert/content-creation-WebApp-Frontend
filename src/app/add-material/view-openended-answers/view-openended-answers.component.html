@@ -1,0 +1,27 @@
+<div>
+    <div class="content" role="main">
+        <h2 style="color: red;" *ngIf="answerData.length === 0">There is no submission for this Question yet.</h2>
+    </div>
+    <div class="container" *ngIf="answerData.length !== 0">
+        <h2 style="color: black;">Answers:</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Time of Submission</th>
+                    <th>Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let answer of answerData">
+                    <td>{{answer.username}}</td>
+                    <td>{{answer.timeStamp}}</td>
+                    <td>{{answer.answer}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- <mat-paginator [length]="topic.length" [pageSize]="10" (page)="getPaginatorData($event)"
+        [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+    </mat-paginator> -->
+</div>

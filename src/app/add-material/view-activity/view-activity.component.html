@@ -1,0 +1,222 @@
+<div class="container" *ngFor="let topics of topicGetById">
+    <h2>Topic Name: {{topics.topic}}</h2>
+    <hr>
+    <br>
+    <h2 style="color: red;" *ngIf="userId === topics.userId && topics.noOfQuestions === '0'">This topic has no material.
+        Please add some material or delete this topic.</h2>
+    <h2 style="color: red;" *ngIf="topics.noOfQuestions === '0' && teacherAuth.currentUser.role === 'Admin'">This topic
+        has no material.
+        Please add some material or delete this topic.</h2>
+    <p>Topic Subject: {{topics.subject}}</p>
+    <p>Topic Language: {{topics.language}}</p>
+    <p>Topic Grade: {{topics.grade}}</p>
+    <p>Topic Country: {{topics.country}}</p>
+    <p>Total number of Questions: {{topics.noOfQuestions}}</p>
+    <p>Time to complete: {{topics.time}} minutes</p>
+    <p *ngIf="topics.access === true">Private material: {{topics.access}}</p>
+    <p *ngIf="topics.access === true && userId === topics.userId ">Material access Code: {{topics.accessCode}}</p>
+    <p *ngIf="teacherAuth.currentUser.role === 'Admin' && topics.access === true">Material access Code:
+        {{topics.accessCode}}</p>
+
+
+    <div class="topicDiv">
+        <button mat-stroked-button *ngIf="userId === topics.userId || teacherAuth.currentUser.role === 'Admin'"
+            [routerLink]="['/material/edit-topic', topics._id]" class="button">Edit Topic</button>
+
+        <button mat-stroked-button *ngIf="userId === topics.userId && topics.noOfQuestions === '0'" class=" button"
+            (click)="deleteTopicDialogue(topics._id)"
+            style="width: fit-content; text-align: center; font-size: px;">Delete
+            Topic</button>
+
+        <button mat-stroked-button *ngIf="teacherAuth.currentUser.role === 'Admin' && topics.noOfQuestions === '0'"
+            class=" button" (click)="deleteTopicDialogue(topics._id)"
+            style="width: fit-content; text-align: center; font-size: px;">Delete
+            Topic</button>
+
+        <button mat-stroked-button *ngIf="userId === topics.userId && remainingQuestions !== 0"
+            [routerLink]="['/material/type', topics._id, topics.noOfQuestions]" class="button"
+            style="width: fit-content; text-align: center; font-size: px;">You have {{remainingQuestions}} questions
+            to add
+        </button>
+
+        <button mat-stroked-button *ngIf="remainingQuestions !== 0 && teacherAuth.currentUser.role === 'Admin'"
+            [routerLink]="['/material/type', topics._id, topics.noOfQuestions]" class="button"
+            style="width: fit-content; text-align: center; font-size: px;">You have {{remainingQuestions}} questions
+            to add
+        </button>
+
+    </div>
+    <br>
+    <div *ngFor="let combine of topics.combineQuestion">
+        <div *ngIf="combine.questionType === 'introduction'" class="mcqs">
+            <span>Question number: {{combine.sequence}}</span>
+            <hr>
+            <h3>Question Statement: {{ combine.introduction }}</h3>
+            <a href="{{combine.link}}" target="_blank">{{combine.link}}</a>
+            <div *ngIf="combine.file !== ''">
+                <img [src]="combine.file" style="height: 200px; width: 300px">
+            </div>
+            <div class="deleteEditButton">
+                <mat-icon *ngIf="userId === topics.userId || teacherAuth.currentUser.role === 'Admin'"
+                    style="color: rgb(199, 24, 24)" class="pointer"
+                    (click)="openDeleteDialogue(combine._id, combine.questionType)" matTooltip="Delete Question">delete
+                </mat-icon>
+                <mat-icon *ngIf="userId === topics.userId || teacherAuth.currentUser.role === 'Admin'" class="pointer"
+                    matTooltip="Edit Question"
+                    [routerLink]="['/material/introduction', combine._id, topics.noOfQuestions]">edit</mat-icon>
+            </div>
+        </div>
+
+        <div class="mcqs" *ngIf="combine.questionType === 'mcqs'">
+            <span>Question number: {{combine.sequence}}</span>
+            <hr>
+            <h3>Question Statement: {{combine.mcqs}}</h3>
+            <div *ngIf="combine.file !== ''">
+                <img [src]="combine.file" style="height: 200px; width: 300px">
+            </div>
+            <br>
+            <ul>
+                <h4>
+                    <mat-radio-button value="1">{{ combine.option1 }}</mat-radio-button>
+                </h4>
+                <h4>
+                    <mat-radio-button value="2">{{ combine.option2 }}</mat-radio-button>
+                </h4>
+                <h4>
+                    <mat-radio-button value="3">{{ combine.option3 }}</mat-radio-button>
+                </h4>
+                <h4>
+                    <mat-radio-button value="4">{{ combine.option4 }}</mat-radio-button>
+                </h4>
+                <h3>Correct answer:</h3>
+                <p> {{combine.answer}}</p>
+                <h3>Feedback if the answer is correct:</h3>
+                <p> {{combine.posFeedback}}</p>
+                <h3>Feedback if the answer is wrong:</h3>
+                <p> {{combine.negFeedback}}</p>
+            </ul>
+            <div class="deleteEditButton">
+                <mat-icon *ngIf="userId === topics.userId || teacherAuth.currentUser.role === 'Admin'"
+                    style="color: rgb(199, 24, 24)" class="pointer"
+                    (click)="openDeleteDialogue(combine._id, combine.questionType)" matTooltip="Delete Question">delete
+                </mat-icon>
+                <mat-icon *ngIf="userId === topics.userId || teacherAuth.currentUser.role === 'Admin'" class="pointer"
+                    matTooltip="Edit Question" [routerLink]="['/material/mcqs', combine._id, topics.noOfQuestions]">edit
+                </mat-icon>
+            </div>
+        </div>
+
+        <div *ngIf="combine.questionType === 'trueFalse'" class="mcqs">
+            <span>Question number: {{combine.sequence}}</span>
+            <hr>
+            <h3>Question Statement: {{ combine.question }}</h3>
+            <div *ngIf="combine.file !== ''">
+                <img [src]="combine.file" style="height: 200px; width: 300px">
+            </div>
+            <h3>Correct answer:</h3>
+            <p> {{combine.answer}}</p>
+            <h3>Feedback if the answer is correct:</h3>
+            <p> {{combine.posFeedback}}</p>
+            <h3>Feedback if the answer is wrong:</h3>
+            <p> {{combine.negFeedback}}</p>
+            <div class="deleteEditButton">
+                <mat-icon *ngIf="userId === topics.userId || teacherAuth.currentUser.role === 'Admin'"
+                    style="color: rgb(199, 24, 24)" class="pointer"
+                    (click)="openDeleteDialogue(combine._id, combine.questionType)" matTooltip="Delete Question">delete
+                </mat-icon>
+                <mat-icon *ngIf="userId === topics.userId || teacherAuth.currentUser.role === 'Admin'" class="pointer"
+                    matTooltip="Edit Question" [routerLink]="['/material/true', combine._id, topics.noOfQuestions]">edit
+                </mat-icon>
+            </div>
+        </div>
+
+        <div class="mcqs" *ngIf="combine.questionType === 'openEnded'">
+            <span>Question number: {{combine.sequence}}</span>
+            <hr>
+            <h3>Question Statement: {{ combine.question }}</h3>
+            <div *ngIf="combine.file !== ''">
+                <img [src]="combine.file" style="height: 200px; width: 300px">
+            </div>
+            <div class="deleteEditButton">
+                <mat-icon *ngIf="userId === topics.userId || teacherAuth.currentUser.role === 'Admin'"
+                    style="color: rgb(199, 24, 24)" class="pointer"
+                    (click)="openDeleteDialogue(combine._id , combine.questionType)" matTooltip="Delete Question">delete
+                </mat-icon>
+                <mat-icon *ngIf="userId === topics.userId || teacherAuth.currentUser.role === 'Admin'" class="pointer"
+                    matTooltip="Edit Question"
+                    [routerLink]="['/material/openEnded', combine._id, topics.noOfQuestions]">edit</mat-icon>
+            </div>
+            <br>
+            <button mat-stroked-button *ngIf="userId === topics.userId || teacherAuth.currentUser.role === 'Admin'"
+                [routerLink]="['/material/viewAnswers', combine._id]" class="button">View Submissions
+            </button>
+        </div>
+
+        <div class="mcqs" *ngIf="combine.questionType === 'matchPairs'">
+            <span>Question number: {{combine.sequence}}</span>
+            <hr>
+            <h3>Question Statement: {{ combine.question }}</h3>
+            <div *ngIf="combine.file !== ''">
+                <img [src]="combine.file" style="height: 200px; width: 300px">
+            </div>
+            <div class="container">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Statements</th>
+                            <th>Answers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{combine.statement1}}</td>
+                            <td>{{ combine.answer1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{combine.statement2}}</td>
+                            <td>{{ combine.answer2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{combine.statement3}}</td>
+                            <td>{{ combine.answer3 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{combine.statement4}}</td>
+                            <td>{{ combine.answer4 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{combine.statement5}}</td>
+                            <td>{{ combine.answer5 }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{combine.statement6}}</td>
+                            <td>{{ combine.answer6 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>Feedback if the answer is correct:</h3>
+            <p> {{combine.posFeedback}}</p>
+            <h3>Feedback if the answer is wrong:</h3>
+            <p> {{combine.negFeedback}}</p>
+            <div class="deleteEditButton">
+                <mat-icon *ngIf="userId === topics.userId || teacherAuth.currentUser.role === 'Admin'"
+                    style="color: rgb(199, 24, 24)" class="pointer"
+                    (click)="openDeleteDialogue(combine._id , combine.questionType)" matTooltip="Delete Question">delete
+                </mat-icon>
+                <mat-icon *ngIf="userId === topics.userId || teacherAuth.currentUser.role === 'Admin'" class="pointer"
+                    matTooltip="Edit Question" [routerLink]="['/material/match', combine._id, topics.noOfQuestions]">
+                    edit</mat-icon>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <button mat-stroked-button routerLink="/user/add" class="button"
+        style="width: fit-content; text-align: center; font-size: px;">
+        Add New Topic?</button>
+</div>
+<br>
+<br>
+<br>

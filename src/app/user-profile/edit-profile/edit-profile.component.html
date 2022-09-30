@@ -1,0 +1,31 @@
+<div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title">{{'user_profile.Edit_profile' | translate}}</h4>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="updateForm" (ngSubmit)="updateUser()">
+                        <div class="row">
+                            <div class="row-cols-1">
+                            </div>
+                            <div class="row-cols-1">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput formControlName="name" placeholder="Name" type="text" name="name"
+                                        id="name">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <button mat-stroked-button type="submit" class="button">{{'user_profile.update' | translate}}</button>
+                        <hr>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<button mat-stroked-button class="button" mat-dialog-close="yes">{{'user_profile.close' | translate}}</button>

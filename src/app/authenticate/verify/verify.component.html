@@ -1,0 +1,13 @@
+<div class="login">
+    <div *ngIf="emailStatus == EmailStatus.verified">
+        <h1>Your email has been verified.</h1>
+        <a href routerLink="/authenticate/login">Please login</a>
+    </div>
+    <div *ngIf="emailStatus == EmailStatus.alreadyVerified">
+        <h1>This email has already been verified.</h1>
+        <a href routerLink ="/authenticate/login">Please login</a>
+    </div>
+    <div *ngIf="emailStatus == EmailStatus.Failed">
+        <p>Verification failed, The email verification link might have been expired. Please request verification link again.</p>
+    </div>
+</div>

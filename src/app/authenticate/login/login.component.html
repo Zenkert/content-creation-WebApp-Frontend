@@ -1,0 +1,86 @@
+<div class="spinnerDiv" *ngIf="loading">
+    <mat-spinner aria-label="Please wait" [diameter]="100" strokeWidth="2"></mat-spinner>
+    <div style="position:relative; top: -60px; left: 30px;">Please wait.</div>
+</div>
+<div class="main-content" *ngIf="!loading">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">{{'login_page.login' | translate}}</h4>
+                        <p class="card-category">{{'login_page.text' | translate}}</p>
+                    </div>
+                    <br>
+                    <div class="card-body">
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                            <!-- <mat-label for="email"><b>{{'login_page.email' | translate}}</b></mat-label> -->
+                            <mat-form-field class="input_text">
+                                <mat-label>{{'login_page.email' | translate}}</mat-label>
+                                <input class="input_form" matInput type="email" name="email" id="email"
+                                    formControlName="email" placeholder="Ex. john@example.com" required>
+                            </mat-form-field>
+                            <mat-error
+                                *ngIf="(!loginForm.valid && loginForm.get('email')?.errors) && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+                                <div>
+                                    {{'login_page.email_error' | translate}}
+                                </div>
+                            </mat-error>
+                            <br>
+                            <!-- <label for="password"><b>{{'login_page.password' | translate}}</b></label> <br> -->
+                            <mat-form-field class="password_form view-pass">
+                                <mat-label>{{'login_page.password' | translate}}</mat-label>
+                                <input matInput formControlName="password" [type]="hide ? 'password' : 'text'"
+                                    name="password" id="password" required>
+                                <mat-icon class="pointer" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' :
+                                    'visibility'}}
+                                </mat-icon>
+                            </mat-form-field>
+                            <mat-error
+                                *ngIf="!loginForm.valid && loginForm.get('password')?.errors && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+                                <div>
+                                    {{'login_page.pass_error' | translate}}
+                                </div>
+                            </mat-error>
+                            <br>
+
+                            <label>
+                                <section class="example-section">
+                                    <mat-checkbox class="example-margin" name="remember"
+                                        id="remember">
+                                        <span>{{'login_page.remember' | translate}}</span>
+                                    </mat-checkbox>
+                                </section>
+                                <div class="password">
+                                    <span [innerHTML]="'login_page.forgot' | translate"></span>
+                                </div>
+                            </label>
+
+                            <button mat-stroked-button type="submit" class="button" class="pointer"
+                                [disabled]="loginForm.invalid" style="background-color: #ccdceb;">{{'login_page.login' |
+                                translate}}<span class="material-icons">
+                                    chevron_right
+                                </span></button>
+                            <hr>
+                        </form>
+                        <br>
+                        <div class=" signin">
+                            <span [innerHTML]="'login_page.account' | translate"></span>
+                            <!-- <span>Do not have an account ? <a href routerLink="/authenticate/register">Sign
+                                    up</a>.</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h1 style="font-weight: bold;">{{'login_page.Seeds' | translate}}</h1>
+                <h2>{{'login_page.Seeds_text' | translate}}</h2>
+                <div class="card card-profile">
+                    <img width="100%" height="100%" src="/assets/welcome_img.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>

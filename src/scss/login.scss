@@ -1,0 +1,55 @@
+.input_password {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      background: #f1f1f1;
+    }
+    .input_text {
+      width: 100%;
+      border: none;
+    }
+    /* Center the avatar image inside this container */
+    .login {
+      // padding: 36px;
+      width: 40%;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin: auto;
+      text-align: center;
+      line-height: 5rem;      
+
+      #accounticon {
+        width: 18rem;
+}
+    }
+    /* Add padding to containers */
+    .container {
+      padding: 16px;
+      width: 25%;
+      margin: auto;
+      // box-shadow: 0px 5px 8px 0px #dbe7ff;
+      
+    }
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+  } 
+  @media (max-width: 480px) {
+      .container {
+  width: 90%;
+      }
+  }
+  // .text-danger{
+    
+  //   color:rgb(235, 72, 72);
+  // }
+  .password_form{
+    width:100%;
+  }
+  .password{
+    margin-bottom: 28px;
+    text-align: right;
+  }

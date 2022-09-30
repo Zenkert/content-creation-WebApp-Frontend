@@ -1,0 +1,76 @@
+<div class="main">
+    <h2>Create different kind of material with the help of seeds.</h2>
+    <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged.</p> -->
+    <h3>Let's get started!</h3>
+    <div class="container-fluid">
+        <div class="home">
+            <h1 style="color: white;">Supporting Learning on the Fringe of the Digital Sphere</h1>
+            <div class="home__step">
+                <div class="home__circle" *ngFor="let sub of subject; let i = index">
+                    <div class="pointer" [routerLink]="['/material/topic/', sub._id]">
+                        <span [ngStyle]="{'color': isDarkTheme === true ? 'black' : 'black'}"
+                            [routerLink]="['/material/topic/', sub._id]">{{sub.subject}}</span>
+                        <span *ngIf="i == 0" class="material-icons" style="color: red;">business_center</span>
+                        <span *ngIf="i == 1" class="material-icons" style="color: yellowgreen;">science</span>
+                        <span *ngIf="i == 2" class="material-icons" style="color: brown;">psychology</span>
+                        <span *ngIf="i == 3" class="material-icons" style="color: #f49b29;">computer</span>
+                        <span *ngIf="i == 4" class="material-icons" style="color: green;">language</span>
+                        <span *ngIf="i == 5" class="material-icons" style="color: blue;">calculate</span>
+                        <span *ngIf="i == 6" class="material-icons" style="color: purple;">history </span>
+                        <span *ngIf="i == 7" class="material-icons" style="color: black;">biotech </span>
+                        <span *ngIf="i == 8" class="material-icons" style="color: #bfd131;">architecture</span>
+                        <span *ngIf="i == 9" class="material-icons" style="color: lightseagreen;">bar_chart</span>
+                        <span *ngIf="i == 10" class="material-icons"
+                            style="color: palevioletred;">design_services</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</div>
+
+<!-- <div class="container">
+    <form [formGroup]="activityForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+            <mat-label> Choose your subject</mat-label>
+            <mat-select formControlName="subject">
+                <mat-option *ngFor="let sub of subject"
+                    value="sub.value" (click)="onSubjectSelection(sub.value)">
+                    {{sub.subject}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label> Choose age group</mat-label>
+            <mat-select [disabled]="true" formControlName="ageGroup">
+                <mat-option value="7 to 10">7 to 10 years</mat-option>
+                <mat-option value="11 to 15">11 to 15 years</mat-option>
+                <mat-option value="15 to 20">15 to 20 years</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label> Choose Language</mat-label>
+            <mat-select formControlName="language">
+                <mat-option value="english">English</mat-option>
+                <mat-option value="spanish">Spanish</mat-option>
+                <mat-option value="german">German</mat-option>
+                <mat-option value="greek">Greek</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="input_text">
+            <mat-label>Name of topic</mat-label>
+            <input class="input_form" matInput type="text" name="topic" id="topic" formControlName="topic" required>
+        </mat-form-field>
+
+        <button mat-stroked-button type="button" class="button" [disabled]="activityForm.invalid">Next</button>
+    </form>
+</div>
+<br>
+<br> -->

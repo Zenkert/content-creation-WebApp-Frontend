@@ -1,0 +1,145 @@
+{
+    "Home_page": {
+        "welcome": "¡Bienvenidos a SEED",
+        "Home Text": "La pandemia de la corona ha sacado a la luz una serie de desigualdades sistémicas en relación con la educación y el acceso a las oportunidades de aprendizaje. En todos los países y entornos de la UE, la necesidad de recurrir a la esfera digital con el aprendizaje ha puesto de manifiesto que no todos los miembros de una sociedad pueden seguirlo por igual. Especialmente los grupos vulnerables, como las personas de origen migratorio, las personas refugiadas o los hablantes no nativos, que ya tenían una experiencia difícil anteriormente. Estos grupos se han quedado ahora aún más rezagados en materia de educación.",
+        "teach": "Enseñemos juntos",
+		"projectpartners": "Socios del proyecto",
+        "paragraph": "El proyecto SEEDS propone una combinación de alcance social y digital para mitigar este efecto, trabajando con trabajadores sociales y con la nueva profesión de mediadores culturales, que actúa como puente hacia los municipios y las instituciones educativas locales, como las escuelas, y ampliando su alcance personal hacia la esfera digital por medio de chatbots. Los contenidos de aprendizaje necesarios se comunicarán de una nueva manera por medio de chatbots, donde los municipios y las instituciones educativas pueden crear materiales de aprendizaje en un proceso predefinido, y los mediadores culturales, los trabajadores sociales o los propios alumnos individuales pueden acceder al material de aprendizaje que los profesores crearon, para mejorar la experiencia educativa de los alumnos.",
+        "who we are": "Quiénes somos"
+    },
+    "login_page": {
+        "login": "Inicio de sesión",
+        "text": "Acceda a su cuenta.",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "remember": "Recuérdame",
+        "forgot": "Olvidé <a href =\"/authenticate/forgotPassword\">Contraseña?</a>!",
+        "account": "No tiene una cuenta ? <a href =\"/authenticate/register\">Inscríbete</a>",
+        "Seeds": "Herramienta de creación de contenidos SEEDS",
+        "Seeds_text": "Crea nuevos contenidos y gestiona tu cuenta, para difundir la semilla de tus conocimientos.",
+        "email_error": "Por favor, introduzca su correo electrónico.",
+        "pass_error": "Por favor, introduzca su contraseña."
+    },
+	"register_page": {
+        "register": "Registro",
+        "text": "Por favor, rellene todos los campos.",
+        "email": "E-mail",
+        "full name": "Nombre completo",
+        "password": "Contraseña",
+        "confirm": "Confirme su contraseña",
+        "terms": "Al crear una cuenta, usted acepta nuestros <br><a href =\"/policy/privacy\">Términos y Privacidad.</a>",
+        "accept": "Por favor, acepte los términos y condiciones de la política de privacidad.",
+        "already_acc": "¿Ya tiene una cuenta? Por favor, <a href =\"/authenticate/login\">inicie sesión</a>",
+        "sign_up": "Inscríbete",
+        "email_error": "Por favor, introduzca una dirección de e-mail.",
+        "valid_email": "Introduzca una dirección de correo electrónico válida.",
+        "already_exist_email":"Este e-mail ya existe.",
+        "name_error": "Por favor, introduzca su nombre.",
+        "pass_error": "Por favor, introduzca una contraseña.",
+        "pass_long": "Su contraseña debe tener al menos 8 caracteres.",
+        "pass_match": "Su contraseña y su contraseña de confirmación deben coincidir.",
+        "confirm_pass": "Por favor, confirme su contraseña."
+    },
+    "header": {
+        "login": "Login",
+        "logout": "Logout",
+        "home": "Inicio",
+        "about":"Sobre",
+        "profile": "Perfil",
+        "help": "Ayuda",
+        "view": "Ver todos los temas",
+        "learn": "¡Aprender juntos!",
+        "hello": "Hola"
+    },
+    "footer": {
+        "about": "Sobre nosotros",
+        "faq": "F.A.Q",
+		"tos": "Condiciones de servicio",
+		"cookies": "Política de cookies",
+		"contact": "Contacto",
+		"services": "Servicios",
+		"viewTopics": "Ver temas",
+		"addTopics": "Añadir temas",
+		"createAccount": "Crear una cuenta"
+    },
+    "user_profile": {
+        "edit": "Perfil",
+        "update": "Actualizar el perfil",
+        "delete": "Borrar la cuenta",
+        "change_pass": "Cambiar la contraseña",
+        "add": "Añadir un nuevo tema",
+        "view": "Ver temas",
+        "profile_text": "Aquí puede editar su perfil, actualizar su información y crear nuevos contenidos de aprendizaje para los estudiantes. Haga clic en el botón de abajo para iniciar el proceso de creación de contenidos. Utilice los campos de la izquierda para editar su información. Si tiene alguna pregunta, consulte la sección de preguntas frecuentes, y no dude en ponerse en contacto con nosotros para obtener más ayuda.",
+        "welcome": "¡Bienvenido a SEEDS!",
+        "user_name": "Su nombre:",
+        "user_email": "Su e-mail:",
+        "close": "Cerrar",
+        "Edit_profile": "Editar perfil"
+    },
+    "add_topics": {
+        "add": "Añadir tema",
+        "text": "Por favor, añada su tema para la creación de material.",
+        "name": "Nombre del tema",
+        "name_error": "Por favor, introduzca un tema.",
+        "name_already_exist": "Este tema ya existe.",
+        "age": "Por favor, seleccione el grupo de edad.",
+        "age_label": "Elija el grupo de edad",
+        "lang": "Seleccione el idioma para el material.",
+        "lang_label": "Elija el idioma",
+        "country": "Seleccione el país.",
+        "country_label": "Elija el país",
+        "grade": "Por favor, seleccione el grado.",
+        "grade_label": "Elija el grado",
+        "activities": "Por favor, seleccione el número de actividades.",
+        "act_label": "Elija el número",
+        "time": "Tiempo de ejecución en minutos.",
+        "time_error": "Por favor, introduzca la hora",
+        "create": "Crear"
+    },
+    "about": {
+        "about_text": "La pandemia de la corona ha sacado a la luz una serie de desigualdades sistémicas en relación con la educación y el acceso a las oportunidades de aprendizaje. En todos los países y entornos de la UE, la necesidad de recurrir a la esfera digital con el aprendizaje ha puesto de manifiesto que no todos los miembros de una sociedad pueden seguirlo por igual. Especialmente los grupos vulnerables, como las personas de origen migratorio, las personas refugiadas o los hablantes no nativos, que ya tenían una experiencia difícil anteriormente. Estos grupos se han quedado ahora aún más rezagados en términos de educación. El proyecto SEEDS propone una combinación de alcance social y digital para mitigar este efecto, trabajando con trabajadores sociales y con la nueva profesión de mediadores culturales, que actúa como puente hacia los municipios y las instituciones educativas locales, como las escuelas, y ampliando su alcance personal hacia la esfera digital por medio de chatbots. Los contenidos de aprendizaje necesarios se comunicarán de una nueva manera por medio de chatbots, donde los municipios y las instituciones educativas pueden crear materiales de aprendizaje en un proceso predefinido, y los mediadores culturales, los trabajadores sociales o los propios alumnos individuales pueden acceder al material de aprendizaje que los profesores crearon, para mejorar la experiencia educativa de los alumnos."
+    },
+    "faq": {
+        "q_what_is_seeds": "¿Qué es SEEDS?",
+        "q_who_is_funding_seeds": "¿Quién financia el proyecto SEEDS?",
+        "q_what_is_project_website": "¿Cuál es el sitio web del proyecto?",
+        "q_how_to_contact": "¿Cómo puedo contactar con el equipo?",
+        "q_who_are_project_partners": "¿Quiénes son los socios del proyecto?",
+        "q_is_project_running": "¿El proyecto sigue en marcha o ha finalizado?",
+        "q_are_project_results_open": "¿Están abiertos los resultados del proyecto?",
+        "q_where_are_project_results": "¿Dónde puedo encontrar los resultados del proyecto?",
+        "a_what_is_seeds": "SEEDS es un proyecto de apoyo al aprendizaje y la educación al margen de la esfera digital. Debido a la falta de acceso a los centros educativos y a la escasez o ausencia de equipos (tabletas, u ordenadores portátiles y PC) con las tecnologías digitales necesarias, los jóvenes tienen dificultades para seguir las clases. Las TIC y, sobre todo, el smartphone pueden utilizarse aquí para paliar este déficit. Hay que tener en cuenta las necesidades y los retos del grupo objetivo (es decir, no hay smartphones actualizados con software anticuado). Nuestra idea es comunicar los contenidos de aprendizaje a las personas vulnerables de una manera nueva mediante el uso de bots de chat.",
+        "a_who_is_funding_seeds": "SEEDS está financiado por: Erasmus+ Strategic Partnership",
+        "a_what_is_project_website": "Puedes visitarnos en: https://seeds.wineme.wiwi.uni-siegen.de",
+        "a_how_to_contact": "Puedes ponerte en contacto con nosotros a través de nuestro correo electrónico: seeds.members@listserv.dfn.de",
+        "a_who_are_project_partners": "SEEDS es una colaboración entre 4 socios: 1) Universidad de Siegen, Instituto de Sistemas Basados en el Conocimiento y Gestión del Conocimiento. 2) Universidad de Siegen, Cátedra de Sistemas de Información y Nuevos Medios. 3) Universidad de Alicante. 4) Open Lab Atenas.",
+        "a_is_project_running": "La duración del proyecto es de dos años, entre 2021-2023.",
+        "a_are_project_results_open": "Todos los resultados del proyecto SEEDS son de acceso abierto y están disponibles en la página web y los repositorios del proyecto.",
+        "a_where_are_project_results": "Puede encontrar los resultados del proyecto y los enlaces a los repositorios en la página web del proyecto."   
+    },
+    "view_all_topics": {
+        "subject": "Tema",
+        "name": "Nombre",
+        "country": "País",
+        "language": "Idioma",
+        "grade": "Grado",
+        "view": "Ver",
+        "no_data_matching": "No hay datos que coincidan con el nombre del tema"
+    },
+    "contact_info": {
+        "contact_info": "Información de contacto",
+        "address​": "Dirección",
+        "email_us": "Envíenos un e-mail",
+        "call_us": "Llámenos"
+    },
+    "edit_topic": {
+        "please_wait": "Por favor, espere.",
+        "edit_topic": "Editar Tema",
+        "checking_topic": "Revisando el tema...",
+        "want_material_private": "¿Desea mantener el material privado?",
+        "enter_access_code": "Por favor, introduzca el código de acceso",
+        "enter_access_code2": "Por favor, introduzca el código de acceso",
+        "update": "Actualizar"
+    }
+    
+}

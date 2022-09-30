@@ -1,0 +1,146 @@
+{
+    "Home_page": {
+        "welcome": "Willkommen bei SEEDS",
+        "Home Text": "Die Corona-Pandemie hat eine Reihe von systemischen Ungleichheiten in Bezug auf Bildung und Zugang zu Lernmöglichkeiten aufgedeckt. Die Notwendigkeit, beim Lernen auf die digitale Sphäre zurückzugreifen, hat gezeigt, dass es nicht für alle Mitglieder einer Gesellschaft gleichermaßen möglich ist, diesem Beispiel zu folgen, und zwar in allen Ländern und Bereichen der EU. Besonders betroffen sind schutzbedürftige Gruppen, darunter Menschen mit Migrationshintergrund, Menschen mit Flüchtlingshintergrund oder Nicht-Muttersprachler, die schon vorher schwierige Erfahrungen gemacht haben. Diese Gruppen sind nun in Sachen Bildung noch stärker ins Hintertreffen geraten.",
+        "teach": "Wir unterrichten gemeinsam",
+		"projectpartners": "Projektpartner",
+        "paragraph": "In Zusammenarbeit mit Sozialarbeitern und dem neu entstandenen Berufsstand der Kulturmediatoren, die als Brücke zu Gemeinden und lokalen Bildungseinrichtungen wie Schulen fungieren, und ihre persönliche Reichweite mit Hilfe von Chatbots auf die digitale Sphäre ausdehnen, schlägt das SEEDS-Projekt eine Kombination aus sozialer und digitaler Reichweite vor, um diesen Effekt abzumildern. Benötigte Lerninhalte werden mit Hilfe von Chatbots auf eine neue Art und Weise vermittelt, bei der Gemeinden und Bildungseinrichtungen Lernmaterialien in einem vordefinierten Prozess erstellen können und Kulturvermittler, Sozialarbeiter oder einzelne Lernende selbst auf das von den Lehrern erstellte Lernmaterial zugreifen können, um die Lernerfahrung der Lernenden zu verbessern.",
+        "who we are": "Über uns"
+    },
+    "login_page": {
+        "login": "Anmeldung",
+        "text": "Bitte melden Sie sich bei Ihrem Konto an.",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "remember": "Passwort speichern",
+        "forgot": "<a href =\"/authenticate/forgotPassword\">Passwort</a> vergessen?",
+        "account": "Haben Sie bereits einen Account? <a href =\"/authenticate/register\">Anmelden</a>.",
+        "Seeds": "SEEDS-Tool zur Erstellung von Inhalten",
+        "Seeds_text": "Erstellen Sie neue Inhalte und verwalten Sie Ihr Konto, um die Saat des Wissens zu verbreiten",
+        "email_error": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+        "pass_error": "Bitte geben Sie Ihr Passwort ein."
+    },
+    "register_page": {
+        "register": "Registrieren",
+        "text": "Bitte füllen Sie alle Felder aus.",
+        "email": "E-Mail",
+        "full name": "Vor- und Nachname",
+        "password": "Passwort",
+        "confirm": "Passwort bestätigen",
+        "accept": "Bitte akzeptieren Sie die Datenschutzbestimmungen.",
+        "terms": "Durch das Erstellen eines Accounts bei<br> stimmen Sie unseren<br><a href =\"/policy/privacy\">Allgemeine Geschäftsbedingungen</a> zu.",
+        "already_acc": "Haben Sie bereits einen Account? <a href =\"/authenticate/login\">Anmelden</a>.",
+        "sign_up": "Anmelden",
+        "email_error": "Bitte tragen Sie Ihre E-Mail ein.",
+        "valid_email": "Bitte tragen Sie eine gültige E-Mail Adresse ein.",
+        "already_exist_email":"Diese E-Mail Adresse existiert bereits.",
+        "name_error": "Bitte tragen Sie Ihren Namen ein.",
+        "pass_error": "Bitte tragen Sie ein Passwort ein.",
+        "pass_long": "Ihr Passwort muss mindestens 8 Zeichen lang sein.",
+        "pass_match": "Ihr Passwort und Ihre Passwortbestätigung müssen übereinstimmen.",
+        "confirm_pass": "Bitte tragen Sie das Passwort zur Bestätigung erneut ein."
+    },
+    "header": {
+        "login": "Anmeldung",
+        "logout": "Ausloggen",
+        "home": "Startseite",
+        "about":"Über uns",
+        "profile": "Profil",
+        "help": "Hilfe",
+        "view": "Themen anzeigen",
+        "learn": "Zusammen Lernen!",
+        "hello": "Hallo"
+    },
+    "footer": {
+        "about": "Über uns",
+        "faq": "F.A.Q",
+		"tos": "Nutzungsbedingungen",
+		"cookies": "Cookies-Richtlinie",
+		"contact": "Kontakt",
+		"services": "Unser Angebot",
+		"viewTopics": "Themen anzeigen",
+		"addTopics": "Themen hinzufügen",
+		"createAccount": "Benutzerkonto erstellen"
+    },
+    "user_profile": {
+        "edit": "Profil",
+        "user_name": "Ihr Name:",
+        "user_email": "Ihre E-Mail Adresse:",
+        "update": "Profil aktualisieren",
+        "delete": "Benutzerkonto löschen",
+        "change_pass": "Passwort ändern",
+        "add": "Neues Thema hinzufügen",
+        "view": "Themen anzeigen",
+        "profile_text": "Hier können Sie Ihr Profil bearbeiten, Ihre Informationen aktualisieren und neue Lerninhalte für Schülerinnen und Schüler erstellen. Bitte klicken Sie auf die Schaltfläche unten, um den Prozess der Inhaltserstellung zu starten. Verwenden Sie die Felder auf der linken Seite, um Ihre Informationen zu bearbeiten. Wenn Sie Fragen haben, lesen Sie bitte den Abschnitt FAQ und zögern Sie nicht, uns zu kontaktieren, wenn Sie weitere Hilfe benötigen.",
+        "welcome": "Willkommen bei SEEDS!",
+        "close": "Schließen",
+        "Edit_profile": "Profil bearbeiten"
+    },
+    "add_topics": {
+        "add": "Thema hinzufügen",
+        "text": "Bitte fügen Sie Ihr Thema für die Materialerstellung hinzu.",
+        "name": "Themenbezeichnung",
+        "name_error": "Bitte fügen Sie ein Thema ein.",
+        "name_already_exist": "Dieses Thema existiert bereits.",
+        "age": "Bitte wählen Sie eine Altersgruppe aus.",
+        "age_label": "Altersgruppe wählen",
+        "lang": "Bitte wählen Sie die Sprache für das Material aus.",
+        "lang_label": "Sprache wählen",
+        "country": "Bitte wählen Sie ein Land aus.",
+        "country_label": "Land wählen",
+        "grade": "Bitte wählen Sie die Klasse.",
+        "grade_label": "Klasse wählen",
+        "activities": "Bitte wählen Sie die Anzahl der Aktivitäten.",
+        "act_label": "Anzahl wählen",
+        "time": "Zeit bis zum Abschluss in Minuten.",
+        "time_error": "Bitte Zeit eingeben",
+        "create": "Erstellen"
+    },
+    "about": {
+        "about_text": "Die Corona-Pandemie hat eine Reihe von systemischen Ungleichheiten in Bezug auf Bildung und Zugang zu Lernmöglichkeiten aufgedeckt. Die Notwendigkeit, beim Lernen auf die digitale Sphäre zurückzugreifen, hat in allen Ländern und Settings in der EU gezeigt, dass es nicht für alle Mitglieder einer Gesellschaft gleichermaßen möglich ist, diesem Beispiel zu folgen. Besonders schutzbedürftige Gruppen, darunter Menschen mit Migrationshintergrund, Menschen mit Flüchtlingshintergrund oder Nicht-Muttersprachler, die schon vorher schwierige Erfahrungen gemacht haben. Diese Gruppen sind nun in Sachen Bildung noch stärker ins Hintertreffen geraten. In Zusammenarbeit mit Sozialarbeitern sowie dem neu entstandenen Berufsstand der Kulturmediatoren, die als Brücke zu Kommunen und lokalen Bildungseinrichtungen wie Schulen fungieren und ihre persönliche Reichweite mit Hilfe von Chatbots auf die digitale Sphäre ausdehnen, schlägt das SEEDS-Projekt eine Kombination aus sozialer und digitaler Ansprache vor, um diesen Effekt zu mildern. Benötigte Lerninhalte werden mit Hilfe von Chatbots auf eine neue Art und Weise vermittelt, bei der Gemeinden und Bildungseinrichtungen Lernmaterialien in einem vordefinierten Prozess erstellen können und Kulturvermittler, Sozialarbeiter oder einzelne Lernende selbst auf das von den Lehrern erstellte Lernmaterial zugreifen können, um die Lernerfahrung der Lernenden zu verbessern."
+    },
+    "faq": {
+        "q_what_is_seeds": "Was ist SEEDS?",
+        "q_who_is_funding_seeds": "Wer finanziert das SEEDS-Projekt?",
+        "q_what_is_project_website": "Wie lautet die Website des Projekts?",
+        "q_how_to_contact": "Wie kann ich das Team kontaktieren?",
+        "q_who_are_project_partners": "Wer sind die Projektpartner?",
+        "q_is_project_running": "Läuft das Projekt noch oder ist es beendet?",
+        "q_are_project_results_open": "Sind die Ergebnisse des Projekts öffentlich zugänglich?",
+        "q_where_are_project_results": "Wo kann ich die Ergebnisse des Projekts finden?",
+        "a_what_is_seeds": "SEEDS ist ein Projekt zur Unterstützung von Lernen und Bildung am Rande der digitalen Sphäre. Aufgrund des fehlenden Zugangs zu Bildungseinrichtungen und der geringen oder fehlenden Ausstattung (Tablets oder Laptops und PCs) mit den notwendigen digitalen Technologien haben junge Menschen Schwierigkeiten, dem Unterricht zu folgen. IKT und vor allem das Smartphone können hier eingesetzt werden, um dieses Defizit abzumildern. Dabei müssen die Bedürfnisse und Herausforderungen der Zielgruppe berücksichtigt werden (d.h. keine aktuellen Smartphones mit veralteter Software). Unsere Idee ist es, mit Hilfe von Chatbots Lerninhalte auf eine neue Art und Weise an gefährdete Menschen zu vermitteln.",
+        "a_who_is_funding_seeds": "SEEDS wird finanziert von: Erasmus+ Strategic Partnership",
+        "a_what_is_project_website": "Sie können uns besuchen auf: https://seeds.wineme.wiwi.uni-siegen.de",
+        "a_how_to_contact": "Sie können uns über unsere E-Mail kontaktieren: seeds.members@listserv.dfn.de",
+        "a_who_are_project_partners": "SEEDS ist eine Zusammenarbeit von 4 Partnern: 1) Universität Siegen, Institut für Wissensbasierte Systeme und Wissensmanagement. 2) Universität Siegen, Lehrstuhl für Wirtschaftsinformatik und Neue Medien. 3) Universität von Alicante. 4) Open Lab Athen.",
+        "a_is_project_running": "Das Projekt hat eine Laufzeit von zwei Jahren, zwischen 2021 und 2023.",
+        "a_are_project_results_open": "Alle Ergebnisse des SEEDS-Projekts sind frei zugänglich und können auf der Projektwebsite und in den Repositories eingesehen werden.",
+        "a_where_are_project_results": "Die Projektergebnisse und Repository-Links finden Sie auf der Projektwebsite."   
+    },
+    "view_all_topics": {
+        "subject": "Thema",
+        "name": "Name",
+        "country": "Land",
+        "language": "Sprache",
+        "grade": "Klasse",
+        "view": "Anzeigen",
+        "no_data_matching": "Keine Daten mit dem Namen des Themas"
+    },
+    "contact_info": {
+        "contact_info": "Kontaktinformationen",
+        "address​": "Anschrift",
+        "email_us": "E-Mail",
+        "call_us": "Anrufen"
+    },
+    "edit_topic": {
+        "please_wait": "Bitte warten.",
+        "edit_topic": "Thema bearbeiten",
+        "checking_topic": "Thema prüfen...",
+        "want_material_private": "Möchten Sie das Material privat halten?",
+        "enter_access_code": "Bitte geben Sie den Zugangscode ein",
+        "enter_access_code2": "Bitte Zugangscode eingeben",
+        "update": "aktualisieren"
+    }
+
+
+}

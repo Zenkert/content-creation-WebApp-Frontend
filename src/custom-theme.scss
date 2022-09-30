@@ -1,0 +1,65 @@
+// @use '@angular/material' as mat;
+
+// @include mat.core();
+// // Define a light theme
+// $app-light-primary: mat.define-palette(mat.$blue-palette);
+// $app-light-accent: mat.define-palette(mat.$green-palette);
+
+// $app-light-theme: mat.define-light-theme((color: (primary: $app-light-primary,
+//                 accent: $app-light-accent,
+//             )));
+// // Define custom typography 
+// // $custom-typography: mat.define-typography-config($font-family: '"Oswald", "Helvetica Neue", sans-serif');
+
+// // Define a dark theme
+// $app-dark-primary: mat.define-palette(mat.$orange-palette);
+// $app-dark-accent: mat.define-palette(mat.$lime-palette);
+// $app-dark-theme: mat.define-dark-theme((color: (primary: $app-dark-primary,
+//                 accent: $app-dark-accent,
+//             )));
+
+// // Apply the light theme by default
+// // @include mat.core($custom-typography);
+// @include mat.all-component-themes($app-light-theme);
+
+// // Apply the dark theme only when the `.dark-theme-mode` CSS class is applied
+// // to an ancestor element of the components (such as `body`).
+// .dark-theme-mode {
+//     @include mat.all-component-themes($app-dark-theme);
+//     body {
+//     background-color: black;
+//     color: white
+//     }
+// }
+
+
+@function modify-background($theme, $background-color) {
+    // A theme is a map with the following structure:
+    // (
+    //   color: (..., background),
+    //   ...,
+    //   background: ...
+    // )
+    //
+    // We need to replace the background color in two palettes.
+    // Once in the background palette inside the color map.
+    // Again in the background palette itself.
+  
+    // Replace the background in the color object's background palette.
+    $theme-color: map-get($theme, color);
+    $color-background-palette: map-get($theme-color, background);
+    $color-background-palette: map-merge($color-background-palette, (background: $background-color));
+    $color-background-palette: map-merge($color-background-palette, (raised-button: $background-color));
+  
+    // Replace the background in the background palette.
+    $background-palette: map-get($theme, background);
+    $background-palette: map-merge($background-palette, (background: $background-color));
+    $background-palette: map-merge($background-palette, (raised-button: $background-color));
+  
+    // Merge the changes into a new theme.
+    $modified-theme-color: map-merge($theme-color, (background: $color-background-palette));
+    $modified-theme: map-merge($theme, (color: $modified-theme-color));
+    $modified-theme: map-merge($modified-theme, (background: $background-palette));
+  
+    @return $modified-theme;
+  }

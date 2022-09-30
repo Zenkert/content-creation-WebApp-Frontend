@@ -1,0 +1,193 @@
+<div class="spinnerDiv" *ngIf="loading">
+    <mat-spinner aria-label="Please wait" [diameter]="100" strokeWidth="2"></mat-spinner>
+    <div style="position:relative; top: -60px; left: 30px;">{{'edit_topic.please_wait' | translate}}</div>
+</div>
+<div class="main-content" *ngIf="!loading">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">{{'edit_topic.edit_topic' | translate}}</h4>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="topicTitle">
+                        <p>{{'add_topics.text' | translate}}</p>
+                        <hr>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="topicForm" (ngSubmit)="onUpdate()">
+
+                            <mat-form-field class="input_text">
+                                <mat-label>{{'view_all_topics.subject' | translate}}</mat-label>
+                                <input class="input_form" matInput type="text" name="subject" id="subject"
+                                    formControlName="subject" required readonly>
+                            </mat-form-field>
+
+                            <input class="input_form" type="hidden" name="remainingQuestions" id="remainingQuestions"
+                                formControlName="remainingQuestions" [value]="remainingQuestion">
+
+                            <mat-form-field class="input_text">
+                                <mat-label>{{'add_topics.name' | translate}}</mat-label>
+                                <input class="input_form" matInput type="text" name="topic" id="topic"
+                                    formControlName="topic" required>
+                            </mat-form-field>
+
+                            <div *ngIf="topicForm.get('topic').pending">{{'edit_topic.checking_topic' | translate}}</div>
+                            <mat-error *ngIf="(!topicForm.valid && topicForm.get('topic')?.errors) && 
+                            (topicForm.get('topic')?.dirty || topicForm.get('topic')?.touched)">
+                                <div>
+                                    {{'add_topics.name_error' | translate}}
+                                </div>
+                            </mat-error>
+
+                            <mat-error *ngIf="topicForm.get('topic').errors?.['topicExists']">
+                                {{'add_topics.name_already_exist' | translate}}
+                            </mat-error>
+                            <br>
+
+                            <mat-label for="ageGroup"><b>{{'add_topics.age' | translate}}</b></mat-label>
+                            <mat-form-field appearance="fill">
+                                <mat-label> {{'add_topics.age_label' | translate}}</mat-label>
+                                <mat-select formControlName="ageGroup" name="ageGroup">
+                                    <mat-option *ngFor="let item of age" [value]="item._id">{{item.age}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-error *ngIf="(!topicForm.valid && topicForm.get('ageGroup')?.errors) && 
+                                (topicForm.get('ageGroup')?.dirty || topicForm.get('ageGroup')?.touched)">
+                                <div>
+                                    {{'add_topics.age' | translate}}
+                                </div>
+                            </mat-error>
+                            <br>
+
+                            <mat-label for="language"><b>{{'add_topics.lang' | translate}}</b></mat-label>
+                            <mat-form-field appearance="fill">
+                                <mat-label>{{'add_topics.lang_label' | translate}}</mat-label>
+                                <mat-select formControlName="language">
+                                    <mat-option [value]="lang.language" *ngFor="let lang of language">{{lang.language}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-error *ngIf="(!topicForm.valid && topicForm.get('language')?.errors) && 
+                            (topicForm.get('language')?.dirty || topicForm.get('language')?.touched)">
+                                <div>
+                                    {{'add_topics.lang' | translate}}
+                                </div>
+                            </mat-error>
+                            <br>
+
+                            <mat-label for="country"><b>{{'add_topics.country' | translate}}</b></mat-label>
+                            <mat-form-field appearance="fill">
+                                <mat-label>{{'add_topics.country_label' | translate}}</mat-label>
+                                <mat-select formControlName="country">
+                                    <mat-option [value]="con.country" *ngFor="let con of country">{{con.country}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-error *ngIf="(!topicForm.valid && topicForm.get('country')?.errors) && 
+                            (topicForm.get('country')?.dirty || topicForm.get('country')?.touched)">
+                                <div>
+                                    {{'add_topics.country' | translate}} </div>
+                            </mat-error>
+                            <br>
+
+                            <mat-label for="grade"><b>{{'add_topics.grade' | translate}}</b></mat-label>
+                            <mat-form-field appearance="fill">
+                                <mat-label> {{'add_topics.grade_label' | translate}}
+                                </mat-label>
+                                <mat-select formControlName="grade">
+                                    <mat-option [value]="grades.grade" *ngFor="let grades of grade">{{grades.grade}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-error *ngIf="(!topicForm.valid && topicForm.get('grade')?.errors) && 
+                            (topicForm.get('grade')?.dirty || topicForm.get('grade')?.touched)">
+                                <div>
+                                    {{'add_topics.grade' | translate}}
+                                </div>
+                            </mat-error>
+                            <br>
+
+                            <mat-label for="noOfQuestions"><b> {{'add_topics.activities' | translate}}</b></mat-label>
+                            <mat-form-field appearance="fill">
+                                <mat-label>{{'add_topics.act_label' | translate}}</mat-label>
+                                <mat-select formControlName="noOfQuestions">
+                                    <mat-option value=1>1</mat-option>
+                                    <mat-option value=2>2</mat-option>
+                                    <mat-option value=3>3</mat-option>
+                                    <mat-option value=4>4</mat-option>
+                                    <mat-option value=5>5</mat-option>
+                                    <mat-option value=6>6</mat-option>
+                                    <mat-option value=7>7</mat-option>
+                                    <mat-option value=8>8</mat-option>
+                                    <mat-option value=9>9</mat-option>
+                                    <mat-option value=10>10</mat-option>
+                                    <mat-option value=11>11</mat-option>
+                                    <mat-option value=12>12</mat-option>
+                                    <mat-option value=13>13</mat-option>
+                                    <mat-option value=14>14</mat-option>
+                                    <mat-option value=15>15</mat-option>
+                                    <mat-option value=16>16</mat-option>
+                                    <mat-option value=17>17</mat-option>
+                                    <mat-option value=18>18</mat-option>
+                                    <mat-option value=19>19</mat-option>
+                                    <mat-option value=20>20</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-error *ngIf="(!topicForm.valid && topicForm.get('noOfQuestions')?.errors) && 
+                            (topicForm.get('noOfQuestions')?.dirty || topicForm.get('noOfQuestions')?.touched)">
+                                <div>
+                                    {{'add_topics.activities' | translate}}
+                                </div>
+                            </mat-error>
+                            <br>
+                            <mat-form-field class="input_text">
+                                <mat-label>{{'add_topics.time' | translate}}</mat-label>
+                                <input class="input_form" matInput type="number" name="time" id="time"
+                                    formControlName="time" required>
+                            </mat-form-field>
+                            <mat-error *ngIf="(!topicForm.valid && topicForm.get('time')?.errors) && 
+                                (topicForm.get('time')?.dirty || topicForm.get('time')?.touched)">
+                                <div>
+                                    {{'add_topics.time_error' | translate}}
+                                </div>
+                            </mat-error>
+                            <br>
+                            <div style="display: flex;">
+                                <span>
+                                    <input type="checkbox" (change)="isAccessChange($event.target)"
+                                        formControlName="access" /></span>
+                                <span>
+                                    {{'edit_topic.want_material_private' | translate}}
+                                </span>
+                            </div>
+                            <br>
+                            <mat-form-field class="input_text" *ngIf="access.value">
+                                <mat-label>{{'edit_topic.enter_access_code' | translate}}</mat-label>
+                                <input class="input_form" matInput type="text" name="accessCode" id="accessCode"
+                                    formControlName="accessCode">
+                            </mat-form-field>
+                            <mat-error class="text-danger" role="alert" *ngIf="(!topicForm.valid && topicForm.get('accessCode')?.errors) && 
+                            (topicForm.get('accessCode')?.dirty || topicForm.get('accessCode')?.touched)">
+                                <div>
+                                    {{'edit_topic.enter_access_code2' | translate}}
+                                </div>
+                            </mat-error>
+                            <br>
+                            <button mat-stroked-button type="submit" class="button" class="pointer"
+                                [disabled]="topicForm.invalid">{{'edit_topic.update' | translate}}<span class="material-icons">
+                                    chevron_right
+                                </span></button>
+                            <hr>
+                        </form>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>

@@ -1,0 +1,127 @@
+mat-toolbar {
+  background: #004a9f;
+  color: white;
+}
+
+.form-control {
+  padding: 10px 10px 10px;
+  background-color: #ccdceb;
+  color: black;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  transition: transform .25s cubic-bezier(.7, .98, .86, .98), box-shadow .25s cubic-bezier(.7, .98, .86, .98);
+
+  &:hover {
+      transform: scale(1.2);
+      box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
+  }
+}
+
+
+.logo {
+  width: 70px;
+  background-color: aliceblue;
+  padding: 8px;
+  border-radius: 0.5rem;
+}
+
+mat-sidenav {
+  margin: 16px;
+  width: 200px;
+  min-width: 50px;
+  border-right: none;
+  background: #002b5c;
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+}
+
+.menu-button {
+  // width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+  padding: 10px 10px 10px;
+
+  mat-icon {
+    margin-right: 8px;
+  }
+
+  button {
+    background-color: #ccdceb;
+    color: black;
+    transition: transform .25s cubic-bezier(.7, .98, .86, .98), box-shadow .25s cubic-bezier(.7, .98, .86, .98);
+
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
+    }
+  }
+}
+
+.avatar {
+  margin-top: 16px;
+  width: 120px;
+  height: 120px;
+  border-radius: 10%;
+  background-color: aliceblue;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.name {
+  margin-top: 8px;
+  font-weight: normal;
+  color: white;
+}
+
+.designation {
+  margin-top: 2px;
+  font-size: 0.7rem;
+  color: lightgrey;
+}
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.content {
+  height: calc(100vh - 130px);
+  border-radius: 10px;
+  margin: 16px;
+  margin-left: 32px;
+  padding: 16px;
+  padding-bottom: 5rem;
+  overflow-y: scroll;
+  /* Add the ability to scroll y axis*/
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+.head-menu {
+  flex: 1 1 auto;
+}
+
+.row {
+  padding-right: 50rem;
+}

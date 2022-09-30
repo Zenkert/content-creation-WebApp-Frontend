@@ -1,0 +1,282 @@
+
+ /* Extra large devices (large desktops, 1200px and up) */
+ @media (min-width: 1600px) and (max-width: 1920px) {
+    html{
+      font-size: 12px;
+    }
+    .neutrality {padding-bottom: 8rem;}
+  }
+  @media (min-width: 1200px) and (max-width: 1600px) {
+    html{
+      font-size: 10px;
+    }
+    .neutrality {padding-bottom: 8rem;}
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 992px) and (max-width: 1200px) {
+  .neutrality {padding-bottom: 8rem;}
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media  (max-width: 991px) {
+  html{
+    font-size: 11px;
+  }
+  .neutrality {
+    padding-bottom: 8rem;
+    &__step{
+      justify-content: space-around;
+    }
+  }
+  .register-container{
+    width: 60% !important;
+  }
+  .report{
+    padding-bottom: 0 !important;
+  }
+  .chooseCalc{
+    height: auto !important;
+    > div{
+      width: 100% !important;
+      float: none !important;
+      padding: 10rem 4rem;
+      h1{
+        padding-top: 0 !important;
+      }
+    }
+  }
+  }
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 768px) and (max-width: 991px) {
+  
+  // .neutrality {padding-bottom: 18rem;}
+  
+  }
+  @media (min-width: 768px){
+  .mobile-menu--sub{
+    display: none;
+  }
+  }
+  @media (max-width: 767px) {
+    .logo{
+      width: 80%;
+    }
+    ul{
+      &.topheader{
+        flex-wrap: wrap;
+        .header1{
+          flex: 0 0 100%;
+          max-width: 100%;
+          order: 3;
+          justify-content: center;
+          li{
+            padding: 0 1rem;
+          }
+        }
+      }
+    }
+  .custom-slider {
+    height: 90vh;
+  }
+  @media (max-width: 767px) {
+    .grid-half {
+      width: 100%;
+      display: block;
+      grid-gap: 1rem;
+    }
+    //about page
+    .about{
+      display: block !important;
+      .smallDiv{
+        padding-bottom: 0;
+        height: auto !important;
+        p{
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: 5rem;
+        }
+      }
+    }
+    //report page
+    .report{
+      display: block !important;
+      .centerDiv{
+        padding-bottom: 0;
+        height: auto !important;
+      }
+    }
+    //user profile page
+    .account {
+      display: flex;
+      flex-direction: column;
+      .mat-form-field{
+      min-width: -webkit-fill-available;
+      }
+    }
+    .edit-profile__settings{
+      > div{
+    display: flex;
+    flex-direction: column;
+    }
+  }
+  }
+  mat-radio-group.mat-radio-group {
+    text-align: left;
+  }
+  .mat-tab-links {
+    flex-direction: column;
+    align-items: start;
+  }
+  .menu1 .mat-tab-nav-bar .mat-ink-bar {
+    display: none;
+  }
+  .menu3 .mat-tab-nav-bar .mat-ink-bar {
+    display: none;
+  }
+  
+  // menu css
+  .mobile-menu{display: flex !important;}
+  .menu1{
+    > .mat-tab-nav-bar{
+      height: 0;
+    }
+  }
+   //profile menu
+  .menu3{
+    > .mat-tab-nav-bar{
+      height: 0;
+    }
+  }
+  
+  .login {
+    width: 90% !important;
+    padding: 0 !important;
+    + .container{
+    width: 60% !important;
+    }
+  }
+  .register {
+    width: 90% !important;
+    padding: 0 !important;
+    + .container{
+    width: 60% !important;
+    }
+  }
+  .neutrality{
+    h1{
+      font-size: 3rem;
+    }
+    &__calculate{
+      display: block;
+    }
+  }
+  
+  
+  // menu
+  .showMenu1{
+    -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    height: 100% !important;
+    .mat-tab-nav-bar{
+     height: 100% !important;
+    }
+    &.menu1{
+      .mobile-menu--sub{
+        display: flex !important;
+      }
+    }
+  }
+  }
+  /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+  @media (min-width: 576px) and (max-width: 767px) {
+  #btmFooter {
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 2rem 0;
+    .footerContentLeft{
+      justify-content: center;
+    }
+  }
+  }
+  
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 320px) and (max-width: 575px) {
+  #btmFooter {
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 2rem 0;
+    .footerContentLeft{
+      justify-content: center;
+    }
+  }
+  .login{
+    h1{
+      font-size: 3rem !important;
+    }
+  }
+  .marketplace{
+    h2{
+      font-size: 3rem !important;
+    }
+  }
+  .register{
+    h1{
+      font-size: 3rem !important;
+    }
+  }
+  .slide-option{
+    display: block !important;
+    &__value{
+      margin: 0 auto;
+    }
+  }
+  .edit-profile__settings{
+    &--faq{
+      width: 80% !important;
+    }
+  }
+  .neutrality__step {
+    justify-content: start;
+    .neutrality__steps{
+      max-width: 90%;
+    }
+  }
+  .neutrality__reduce__step {
+    justify-content: start;
+    .neutrality__reduce__steps{
+      max-width: 90%;
+    }
+  }
+  .register-container{
+    width: 60% !important;
+  }
+  }
+  
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 0) and (max-width: 320px) {
+  
+  #btmFooter {
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 2rem 0;
+    .footerContentLeft{
+      justify-content: center;
+    }
+  }
+  .login{
+    h1{
+      font-size: 3rem !important;
+    }
+  }
+  .marketplace{
+    h2{
+      font-size: 3rem !important;
+    }
+  }
+  }
+  

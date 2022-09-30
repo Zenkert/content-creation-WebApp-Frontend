@@ -1,0 +1,62 @@
+<div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">{{'user_profile.edit' | translate}}</h4>
+                        <button mat-stroked-button class="button" type="button" (click)="openDialogue()">
+                            {{'user_profile.Edit_profile' | translate}}</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <hr>
+                            <div class="row-cols-1">
+                                <span class="user-profile">{{'user_profile.user_name' | translate}}</span>
+                                <span>{{user?.data?.name}}</span>
+                            </div>
+                            <div class="row-cols-1">
+                                <span class="user-profile">{{'user_profile.user_email' | translate}}</span>
+                                <span>{{user?.data?.email}}</span>
+                            </div>
+                        </div>
+                        <div class="buttonDiv">
+                            <button mat-stroked-button type="submit" class="button"
+                                (click)="openDeleteDialogue()">{{'user_profile.delete' | translate}}</button>
+                            <button mat-stroked-button type="submit" class="button"
+                                routerLink="/authenticate/changePassword">{{'user_profile.change_pass' |
+                                translate}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <img src="assets/avatar.png">
+                    </div>
+                    <div class="card-body">
+                        <div class="profile_text">
+                            <h6 class="card-category text-gray">{{'user_profile.welcome' | translate}}</h6>
+                            <h4>{{'header.hello' | translate}} {{username}}</h4>
+                            <p class="card-description">
+                                {{'user_profile.profile_text' | translate}}
+                            </p>
+                        </div>
+                        <div class="main-button">
+                            <button mat-stroked-button type="button" class="button" routerLink="/user/add">
+                                {{'user_profile.add' | translate}}</button>
+                            <button mat-stroked-button type="button" class="button" routerLink="/user/view">
+                                {{'user_profile.view' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
